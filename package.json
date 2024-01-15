@@ -3,38 +3,29 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:bookingMovie": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --ci-build-id 5",
-    "test:loginAdmin": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --ci-build-id 5",
-    "test:homepage": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group HP --spec 'cypress/e2e/homepage.cy.js' --ci-build-id 5",
-    "test:parallel": "run-p -c test:bookingMovie test:loginAdmin test:homepage  ",
-
-    "test:bookingMovie:chrome": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser chrome",
-    "test:bookingMovie:firefox": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser firefox",
-    "test:bookingMovie:electron": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser electron",
-    
-    "test:loginAdmin:chrome": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser chrome",
-    "test:loginAdmin:firefox": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser firefox",
-    "test:loginAdmin:electron": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser electron",
-
-    "test:homepage:chrome": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group HP --spec 'cypress/e2e/homepage.cy.js' --browser chrome",
-    "test:homepage:firefox": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group HP --spec 'cypress/e2e/homepage.cy.js' --browser firefox",
-    "test:homepage:electron": "cypress run --record --key abec1b1c-425e-4677-a447-a60245784fbe --group HP --spec 'cypress/e2e/homepage.cy.js' --browser electron",
-
+    "test:bookingMovie:chrome": "cypress run --record  --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser chrome",
+    "test:bookingMovie:firefox": "cypress run --record  --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser firefox",
+    "test:bookingMovie:electron": "cypress run --record  --group BM --spec 'cypress/e2e/bookingMovie.cy.js' --browser electron",
+    "test:loginAdmin:chrome": "cypress run --record  --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser chrome",
+    "test:loginAdmin:firefox": "cypress run --record --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser firefox",
+    "test:loginAdmin:electron": "cypress run --record   --group LA --spec 'cypress/e2e/loginAdmin.cy.js' --browser electron",
+    "test:homepage:chrome": "cypress run --record  --group HP --spec 'cypress/e2e/homepage.cy.js' --browser chrome",
+    "test:homepage:firefox": "cypress run --record  --group HP --spec 'cypress/e2e/homepage.cy.js' --browser firefox",
+    "test:homepage:electron": "cypress run --record  --group HP --spec 'cypress/e2e/homepage.cy.js' --browser electron",
     "test:parallel:chrome": "run-p -c test:bookingMovie:chrome test:loginAdmin:chrome test:homepage:chrome",
     "test:parallel:firefox": "run-p -c test:bookingMovie:firefox test:loginAdmin:firefox test:homepage:firefox",
     "test:parallel:electron": "run-p -c test:bookingMovie:electron test:loginAdmin:electron test:homepage:electron",
-    "test:parallel:chrome:firefox:electron": "run-p -c test:bookingMovie:chrome test:loginAdmin:firefox test:homepage:electron",
-    "test:test1:chrome": "cypress run --record --group test1 --spec 'cypress/e2e/test1/*' --browser chrome",
-    "test:test2:chrome": "cypress run --record --group test2 --spec 'cypress/e2e/test2/*' --browser chrome",
-    "test:parallel:test1:test2": "run-p -c test:test1:chrome test:test2:chrome"
-
+    "test:parallel:firefox:electron": "run-p -c test:loginAdmin:firefox test:homepage:electron",
+    "test:test1:electron": "cypress run --record --group test1 --spec 'cypress/e2e/test1/*' --browser electron",
+    "test:test2:electron": "cypress run --record --group test2 --spec 'cypress/e2e/test2/*' --browser electron",
+    "test:parallel:test1:test2": "run-p -c test:test1:electron test:test2:electron"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.6.0",
-    "npm-run-all": "^4.1.5"
+    "cypress": "^13.6.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.1.1"
   },
   "dependencies": {
     "aggregate-error": "^3.1.0",
@@ -149,7 +140,6 @@
     "minimatch": "^3.1.2",
     "minimist": "^1.2.8",
     "ms": "^2.1.2",
-    "npm-run-all": "^4.1.5",
     "npm-run-path": "^4.0.1",
     "object-inspect": "^1.13.1",
     "once": "^1.4.0",
